@@ -6,21 +6,26 @@ body {
   display: grid;
   place-content: center;
   min-height: 100vh;
+  gap: 2rem;
   margin: 0;
   padding: 1rem;
 }
 
-h1 {
-  --houdiniExampleWidth: 200;
-  --houdiniExampleHeight: 30;
-  --houdiniExampleX: 15;
-  --houdiniExampleY: 30;
-  --houdiniExampleColor: rgb(221, 75, 216);
+.barchart {
+  /* Number of bars */
+  --barchart-number: 5;
+  /* Chart seed number - creates chart variance */
+  --barchart-seed: 23892;
+  /* Option 1: Provide a CSS color */
+  /* --barchart-color: purple; */
+  /* Option 2: Provide gradient start and end colors for a "to bottom" gradient */
+  --barchart-start-color: hsl(260, 85%, 65%);
+  --barchart-end-color: hsl(260, 85%, 35%);
 
-  background: paint(houdiniExample);
-  max-width: 30ch;
-  padding: 2rem;
-  font-size: 3rem;
-  font-weight: bold;
-  font-family: system-ui, sans-serif;
+  /* Use the worklet! */
+  background-image: paint(houdiniBarCharts);
+
+  /* element styles */
+  width: min(30ch, 100vw - 2rem);
+  height: 15vh;
 }
