@@ -15,7 +15,7 @@ body {
   /* Number of bars */
   --barchart-number: 5;
   /* Chart seed number - creates chart variance */
-  --barchart-seed: 23892;
+  --barchart-seed: 22382;
   /* Option 1: Provide a CSS color */
   /* --barchart-color: purple; */
   /* Option 2: Provide gradient start and end colors for a "to bottom" gradient */
@@ -24,8 +24,21 @@ body {
 
   /* Use the worklet! */
   background-image: paint(houdiniBarCharts);
+  background-repeat: no-repeat;
+  /* Optional: ignore padding */
+  background-origin: content-box;
 
   /* element styles */
   width: min(30ch, 100vw - 2rem);
-  height: 15vh;
+  height: 20vh;
+  padding: 2rem;
+  border: 1px dashed grey;
+  border-radius: 2rem;
+}
+
+@supports (aspect-ratio: 1) {
+  .barchart {
+    aspect-ratio: 4/3;
+    height: auto;
+  }
 }

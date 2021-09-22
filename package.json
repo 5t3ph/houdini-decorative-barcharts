@@ -1,6 +1,6 @@
 {
   "name": "houdini-decorative-barcharts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An Eleventy environment for creating CSS Houdini worklets.",
   "main": "dist/worklet.js",
   "scripts": {

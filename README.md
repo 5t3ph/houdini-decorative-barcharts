@@ -6,6 +6,8 @@ Generate dynamic _decorative/placeholder_ bar charts using CSS Houdini. Intended
 
 The worklet will create randomized bar heights and compute bar widths and gap sizes relative to the number of bars requested vs. the width of the element. Since worklets update when the element is repainted, these values will resize alongside the element. The `seed` value ensures consistent results across repaints (prevents "flashing" effect on resize).
 
+> [**Preview on CodePen >**](https://codepen.io/5t3ph/pen/jOwKGPZ)
+
 **Important**: Do not use these as a substitute for real bar charts because they will not provide any information to non-sighted or keyboard users unless you separately create text alternatives to describe the information. Plus, they are random which means you will not be able to match real data.
 
 ## How to Use
@@ -33,7 +35,7 @@ Finally, use it in your styles! For best results, assign as the `background-imag
   /* Number of bars */
   --barchart-number: 5;
   /* Chart seed number - ensures chart variance */
-  --barchart-seed: 2385;
+  --barchart-seed: 22382;
   /* Option 1: Provide a CSS color */
   --barchart-color: purple;
   /* Option 2: Provide gradient start and end colors for a "to bottom" gradient */
