@@ -1,3 +1,5 @@
+![Preview of generated bar charts, in shades of purple, blue, and seafoam with various numbers of bars](https://repository-images.githubusercontent.com/408878985/2b66d282-faf7-4609-bbc1-93040e3a02c1)
+
 # CSS Houdini Decorative Bar Charts
 
 > From Stephanie Eckles [@5t3ph](https://twitter.com/5t3ph) - author of [ModernCSS.dev](https://moderncss.dev).
