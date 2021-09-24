@@ -8,7 +8,8 @@ Generate dynamic _decorative/placeholder_ bar charts using CSS Houdini. Intended
 
 The worklet will create randomized bar heights and compute bar widths and gap sizes relative to the number of bars requested vs. the width of the element. Since worklets update when the element is repainted, these values will resize alongside the element. The `seed` value ensures consistent results across repaints (prevents "flashing" effect on resize).
 
-> [**Preview on CodePen >**](https://codepen.io/5t3ph/pen/jOwKGPZ)
+- [**Preview on CodePen**](https://codepen.io/5t3ph/pen/jOwKGPZ)
+- [View in a demo application](https://lwj-modcss.netlify.app/)
 
 **Important**: Do not use these as a substitute for real bar charts because they will not provide any information to non-sighted or keyboard users unless you separately create text alternatives to describe the information. Plus, they are random which means you will not be able to match real data.
 
@@ -16,21 +17,29 @@ The worklet will create randomized bar heights and compute bar widths and gap si
 
 While Houdini paint worklets have the best support out of available Houdini features, they still currently require a polyfill to ensure they are applied cross browser.
 
-So, first include the following once in your project:
+So, first include the following once in your project.
 
 ```html
 <script src="https://unpkg.com/css-paint-polyfill"></script>
 ```
+
+> Note: The polyfill will not work if the worklet is applied to pseudo elements.
 
 Then, include the paint worklet script _after_ the polyfill is loaded:
 
 ```html
 <script>
   CSS.paintWorklet.addModule("https://unpkg.com/houdini-decorative-barcharts");
+
+  // Trickery to get the polyfill to draw the charts in Firefox and Safari
+  setTimeout(() => {
+    document.querySelector("ANCESTOR_ELEMENT").style.width = "100.01%";
+    document.querySelector("ANCESTOR_ELEMENT").style.width = "100%";
+  }, 500);
 </script>
 ```
 
-Finally, use it in your styles! For best results, assign as the `background-image` to a dedicated element or a pseudo element to control the size used for the bar chart.
+Finally, use it in your styles! For best results, assign as the `background-image` to a dedicated element to control the size used for the bar chart.
 
 ```css
 .barchart-element {
